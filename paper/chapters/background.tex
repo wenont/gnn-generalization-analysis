@@ -249,10 +249,10 @@ In the following sections, I provide an overview of the methods related to this 
 Graph Convolutional Network (GCNs) is a class of neural networks that can operate on graph-structured data. The GCN model $f(\vec{X}, \vec{A})$, as proposed by Kipf and Welling~\cite{kipf2016semi}, is defined as
 
 $$ 
- \vec{h}^{(l+1)} = \sigma(\tilde{\vec{D}}^{-\frac{1}{2}}\tilde{\vec{A}}\tilde{\vec{D}}^{-\frac{1}{2}}\vec{h}^{(l)}\vec{W}^{(l)})
+ \vec{H}^{(l+1)} = \sigma(\tilde{\vec{D}}^{-\frac{1}{2}}\tilde{\vec{A}}\tilde{\vec{D}}^{-\frac{1}{2}}\vec{H}^{(l)}\vec{W}^{(l)})
 $$
 
-where $\vec{h}^{(l)}\in \mathbb{R}^{N\times D}$ is the node feature matrix at layer $l$; $\vec{h}^{(0)} = \vec{X} \in \mathbb{R}^{\mathcal{V}\times D}$. $\tilde{\vec{A}} = \vec{A} + \vec{I}$ is the adjacency matrix of the graph with self-connections added, $\tilde{\vec{D}}_{ii}=\sum_{j=0} \tilde{\vec{A}}_{ij}$ its diagonal degree matrix. $\vec{W}^{(l)}$ is the weight matrix of the layer, and $\sigma$ is the activation function, such as the $\textrm{ReLU}(\cdot)=\max(0,\cdot)$. The GCN layer aggregates information from neighboring nodes and updates the node features by applying a linear transformation followed by a non-linear activation function. The output of the GCN layer is the node feature matrix at the next layer. The GCN layer can be stacked to create deep GCN models, which have been shown to be effective in a wide range of tasks, such as node classification, edge prediction, and graph classification.
+where $\vec{H}^{(l)}\in \mathbb{R}^{N\times D}$ is the node feature matrix at layer $l$; $\vec{H}^{(0)} = \vec{X} \in \mathbb{R}^{|\mathcal{V}|\times D}$. $\tilde{\vec{A}} = \vec{A} + \vec{I}$ is the adjacency matrix of the graph with self-connections added, $\tilde{\vec{D}}_{ii}=\sum_{j=0} \tilde{\vec{A}}_{ij}$ its diagonal degree matrix. $\vec{W}^{(l)}$ is the weight matrix of the layer, and $\sigma$ is the activation function, such as the $\textrm{ReLU}(\cdot)=\max(0,\cdot)$. The GCN layer aggregates information from neighboring nodes and updates the node features by applying a linear transformation followed by a non-linear activation function. The output of the GCN layer is the node feature matrix at the next layer. The GCN layer can be stacked to create deep GCN models, which have been shown to be effective in a wide range of tasks, such as node classification, edge prediction, and graph classification.
 
 
 \paragraph{Simplified Graph Convolution}
@@ -260,7 +260,7 @@ where $\vec{h}^{(l)}\in \mathbb{R}^{N\times D}$ is the node feature matrix at la
 Simplified Graph Convolution (SGC)~\cite{wu2019simplifying} is a simplified version of the GCN model that removes the non-linear activation function and the normalization of the adjacency matrix. The SGC model is defined as
 
 $$
- \vec{X}' = (\tilde{\vec{D}}^{-\frac{1}{2}}\tilde{\vec{A}}\tilde{\vec{D}}^{-\frac{1}{2}})^K \vec{X}\vec{W}
+ \vec{H}' = (\tilde{\vec{D}}^{-\frac{1}{2}}\tilde{\vec{A}}\tilde{\vec{D}}^{-\frac{1}{2}})^K \vec{X}\vec{W}
 $$
 
 where $\vec{X}$ is the node feature matrix, $W$ is the weight matrix, $\tilde{\vec{A}}$ is the adjacency matrix with self-connections added, $\tilde{\vec{D}}$ is the degree matrix of $\tilde{\vec{A}}$, and $K$ is the number of layers. 
