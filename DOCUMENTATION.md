@@ -829,8 +829,3 @@ This is a research project for a bachelor thesis. For questions or suggestions:
 - [PyTorch Geometric](https://pytorch-geometric.readthedocs.io/)
 - [Weights & Biases](https://wandb.ai/)
 - [NetworkX](https://networkx.org/)
-
----
-
-**Last Updated:** 2025-02-13
-**Version:** 1.0.0

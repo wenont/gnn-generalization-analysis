@@ -239,7 +239,7 @@ Correlation Analysis → Visualization
 
 ## Additional Documentation
 
-- **[DOCUMENTATION.md](DOCUMENTATION.md)** - Comprehensive guide (25+ pages)
+- **[DOCUMENTATION.md](DOCUMENTATION.md)** - Comprehensive guide
 - **[QUICK_START.md](QUICK_START.md)** - Fast-track commands
 - **[CODE_REFERENCE.md](CODE_REFERENCE.md)** - Complete API reference
 - **[INDEX.md](INDEX.md)** - Navigation guide
